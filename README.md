@@ -4,6 +4,6 @@
 
 ## 閱讀與新增案例
 
-- [首頁及研究方法](index.html)提供案例目錄、查核規則和本次觀察。也可下載專案後直接在瀏覽器開啟 `index.html`。
+- [公開網站](https://f114112112-iyang.github.io/ai-summary-audit-lab/)提供案例目錄、研究方法和本次觀察。也可下載專案後直接在瀏覽器開啟 `index.html`。
 - [AGENTS.md](AGENTS.md)說明如何保留原文、執行兩組提示詞、判讀摘要、登錄新頁及驗收統計。
 - [圖書館延長開館](cases/library-hours.html)是案例頁範本。新增案例時沿用同一套段落與共用樣式，並更新首頁目錄及總數。
