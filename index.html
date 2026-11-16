@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="比較兩種提示詞的 AI 摘要，公開原文、實際輸出和逐句查核紀錄。">
+  <title>AI 摘要查核實驗室</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="home-page">
+  <header class="site-header">
+    <div class="site-shell header-inner">
+      <a class="brand" href="index.html">AI 摘要查核實驗室</a>
+      <nav class="header-nav" aria-label="主導覽"><a href="#cases">案例</a><a href="#method">方法</a></nav>
+    </div>
+  </header>
+  <main class="site-shell">
+    <section class="hero" aria-labelledby="home-title">
+      <div class="hero-copy">
+        <p class="eyebrow">生成式 AI 摘要研究</p>
+        <h1 id="home-title">加上「只根據原文」，AI 摘要會少寫無依據的資訊嗎？</h1>
+        <p class="lede">用兩種提示詞摘要相同素材，再把每句話對回原文，記錄原文支持的說法與被省略的限制。</p>
+        <a class="primary-link" href="#cases">查看查核案例 <span aria-hidden="true">↓</span></a>
+      </div>
+      <section class="result-panel" aria-labelledby="overview-results">
+        <h2 id="overview-results">無依據句數／可查核句數</h2>
+        <div class="score-grid">
+          <div class="score"><span class="score-label">A 基本提示詞</span><strong class="score-value" id="score-a">0 / 4</strong></div>
+          <div class="score"><span class="score-label">B 加上原文限制</span><strong class="score-value" id="score-b">0 / 4</strong></div>
+        </div>
+        <p id="sample-size">同一批共 2 則自編模擬原文，A、B 各執行一次。</p>
+      </section>
+    </section>
+
+    <section class="catalog" id="cases" aria-labelledby="case-list-title">
+      <h2 id="case-list-title">查核案例</h2>
+      <ul class="case-list">
+        <li>
+          <a class="case-card" href="cases/library-hours.html">
+            <div class="case-copy"><h3>圖書館延長開館</h3><p>核對人次、試辦範圍與續辦狀態。</p></div>
+            <span class="case-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a class="case-card" href="cases/reusable-cup-station.html">
+            <div class="case-copy"><h3>循環杯借用小站</h3><p>核對借出與回收杯數、開放對象與再試辦計畫。</p></div>
+            <span class="case-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="method" id="method" aria-labelledby="method-title">
+      <h2 id="method-title">研究方法</h2>
+      <p>2026 年 11 月 16 日，在 Codex 開兩個獨立 AI 工作階段，使用相同的預設模型。A 和 B 各自收到同一批、同一順序的兩段自編原文。每組生成一次，B 只多加一條限制句。</p>
+      <dl class="prompt-list">
+        <dt>A 組共同任務</dt>
+        <dd>用繁體中文替下面兩段素材各寫兩句給學生會簡報使用的摘要，交代試辦結果與下一步。只輸出案例一與案例二的摘要。</dd>
+        <dt>B 組在共同任務後加上的一句</dt>
+        <dd>只根據原文撰寫，遇到原文未提供的資訊就省略。</dd>
+      </dl>
+      <p>每組提示詞後都接上案例一、案例二的原文。記錄輸出原句，逐句用原文判定。</p>
+      <ul>
+        <li><strong>相符</strong>　句中每項可查事實都能由原文確認。</li>
+        <li><strong>衝突</strong>　有一項事實與原文矛盾。</li>
+        <li><strong>未提及</strong>　有一項說法在原文找不到依據，其他事實與原文無矛盾。</li>
+        <li><strong>建議</strong>　純建議且沒有事實主張，單獨記錄。</li>
+      </ul>
+      <p>「無依據句數」加總衝突和未提及兩類。分母加總相符、衝突及未提及。原文有寫但摘要未保留的資訊，另記為「省略」。</p>
+      <p>研究以摘要對來源的忠實度為背景。<a href="https://aclanthology.org/2020.acl-main.173/">Maynez 等人（2020），On Faithfulness and Factuality in Abstractive Summarization</a></p>
+    </section>
+
+    <section class="findings" id="findings" aria-labelledby="findings-title">
+      <h2 id="findings-title">目前結果與限制</h2>
+      <p>兩個案例合計，A、B 各有 4 句相符，無依據句數皆為 0。A 保留了兩個案例的資料限制。B 省略了圖書館缺乏獨立人數與原時段同期資料，以及循環杯借用小站未記錄重複借用、未調查其他學生意願的說明。</p>
+      <p>本次為小型探索。兩組各執行一次，判讀由 AI 依同一規則逐句比對。結果適用於這批模擬原文與這次生成。</p>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="site-shell"><a href="AGENTS.md">案例新增規則</a></div></footer>
+</body>
+</html>

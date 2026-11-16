@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="用兩種提示詞摘要循環杯借用小站的試營運模擬紀錄，再逐句核對。">
+  <title>循環杯借用小站｜AI 摘要查核實驗室</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="case-page">
+  <header class="site-header">
+    <div class="site-shell header-inner">
+      <a class="brand" href="../index.html">AI 摘要查核實驗室</a>
+      <nav class="header-nav" aria-label="主導覽"><a href="../index.html#cases">案例目錄</a><a href="../index.html#method">方法</a></nav>
+    </div>
+  </header>
+  <main class="site-shell case-main">
+    <header class="case-heading">
+      <p class="eyebrow">摘要查核案例</p>
+      <h1>循環杯借用小站</h1>
+      <p class="lede">小站在午休試營運三天。原文記錄借出與回收杯數，以及社團的下次試辦計畫。</p>
+    </header>
+    <div class="case-content">
+      <section aria-labelledby="source-heading">
+        <h2 id="source-heading">原始素材</h2>
+        <p>自編模擬原文，為同批提示詞中的案例二。</p>
+        <blockquote class="source-text">循環杯借用小站於午休試營運三天，只開放給參加活動的兩個班。共借出 36 個杯子，結束前回收 30 個。工作人員未記錄同一位借用者是否借了多次，也未調查其他學生意願。社團擬再試一次並記下回收時間。</blockquote>
+      </section>
+      <section aria-labelledby="output-heading">
+        <h2 id="output-heading">提示詞與輸出</h2>
+        <p>完整提示詞列於<a href="../index.html#method">研究方法</a>。下方保留兩組實際生成的摘要。</p>
+        <div class="comparison">
+          <div class="condition"><h3>A 基本提示詞</h3><blockquote>循環杯借用小站在午休試營運三天，限參加活動的兩個班借用，共借出 36 個杯子，結束前回收 30 個。本次未記錄重複借用情形，也未調查其他學生的意願，社團擬再試辦一次並記錄回收時間。</blockquote></div>
+          <div class="condition"><h3>B 加上原文限制</h3><blockquote>循環杯借用小站在午休試營運三天，僅開放給參加活動的兩個班，共借出 36 個杯子，試營運結束前回收 30 個。社團擬再試辦一次，並記錄杯子的回收時間。</blockquote></div>
+        </div>
+      </section>
+      <section aria-labelledby="check-heading">
+        <h2 id="check-heading">逐句核對</h2>
+        <div class="table-wrap">
+          <table class="evidence-table">
+            <thead><tr><th scope="col">組別與句次</th><th scope="col">判定</th><th scope="col">原文依據</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">A 第 1 句</th><td><span class="status">相符</span></td><td>原文交代午休試營運三天，只開放給參加活動的兩個班，共借出 36 個杯子，結束前回收 30 個。</td></tr>
+              <tr><th scope="row">A 第 2 句</th><td><span class="status">相符</span></td><td>原文說工作人員未記錄同一人是否多次借用，也未調查其他學生意願，並提到社團擬再試一次、記下回收時間。</td></tr>
+              <tr><th scope="row">B 第 1 句</th><td><span class="status">相符</span></td><td>試營運的時段與天數、開放對象、借出杯數和結束前回收的杯數都可由原文確認。</td></tr>
+              <tr><th scope="row">B 第 2 句</th><td><span class="status">相符</span></td><td>原文說「社團擬再試一次並記下回收時間」。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section aria-labelledby="result-heading">
+        <h2 id="result-heading">結果與限制</h2>
+        <p><strong>A 組 0 / 2，B 組 0 / 2。</strong>兩組各有兩句相符。A 保留了未記錄重複借用、未調查其他學生意願兩項限制，B 省略了這兩項。這些數字只描述參加活動兩班的試營運，無法得知有多少不同的學生借用，或據此推估其他學生的借用意願。</p>
+      </section>
+    </div>
+    <div class="case-footer"><a href="../index.html#cases">← 回案例目錄</a></div>
+  </main>
+  <footer class="site-footer"><div class="site-shell"><a href="../AGENTS.md">案例新增規則</a></div></footer>
+</body>
+</html>
